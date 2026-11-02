@@ -36,7 +36,9 @@ class News {
                 newsItem.classList.add('alt');
             }
 
-            photo.style.backgroundImage = `url(${item.urlToImage ?? 'img/news_placeholder.jpg'})`;
+            photo.style.backgroundImage = item.urlToImage
+                ? `url("${item.urlToImage}")`
+                : 'linear-gradient(135deg, #0f766e, #1d4ed8)';
 
             author.textContent = item.author ?? item.source.name;
             date.textContent = item.publishedAt.slice(0, 10).split('-').reverse().join('-');
