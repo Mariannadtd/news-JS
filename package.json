@@ -1,7 +1,7 @@
 {
     "name": "NewsJS",
     "version": "1.0.0",
-    "description": "",
+    "description": "Responsive News API application migrated to TypeScript",
     "main": "webpack.base.config.js",
     "scripts": {
         "start": "webpack serve --open --config ./webpack.config.js --env mode=dev",
@@ -10,12 +10,12 @@
     },
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/Mariannadtd/news-JS.git"
     },
     "keywords": [],
-    "author": "Aleh Serhiyenia",
+    "author": "Mariannadtd",
     "license": "ISC",
-    "homepage": "",
+    "homepage": "https://mariannadtd.github.io/news-JS/",
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^7.3.1",
         "@typescript-eslint/parser": "^7.3.1",

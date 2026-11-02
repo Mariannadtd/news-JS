@@ -4,7 +4,19 @@ export enum HttpMethod {
 
 export type QueryValue = string | number | boolean | undefined;
 
-export type QueryOptions = Record<string, QueryValue>;
+export interface QueryParameters {
+    apiKey: string;
+    sources: string;
+    q: string;
+    page: number;
+    pageSize: number;
+    language: string;
+    country: string;
+    category: string;
+    sortBy: 'relevancy' | 'popularity' | 'publishedAt';
+}
+
+export type QueryOptions = Partial<QueryParameters>;
 
 export type ResponseCallback<T> = (data: T) => void;
 
@@ -50,7 +62,7 @@ class Loader {
             ...options,
         };
 
-        Object.entries(urlOptions).forEach(([key, value]): void => {
+        (Object.entries(urlOptions) as Array<[keyof QueryParameters, QueryValue]>).forEach(([key, value]): void => {
             if (value !== undefined) {
                 url.searchParams.set(key, String(value));
             }
